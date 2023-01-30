@@ -1,0 +1,64 @@
+//ATM machine Interface
+import java.util.Scanner;
+public class ATMInterface
+{
+public static void main(String arg[])
+{
+try
+{
+int balance=0,withdraw,deposite;
+Scanner S=new Scanner(System.in);
+while(true)
+{
+System.out.println("ATM MACHINE \n");
+System.out.println("Choose 1 for withdraw");
+System.out.println("Choose 2 for Deposite");
+System.out.println("Choose 3 for  check your Balance");
+System.out.println("Choose 4 for Exit \n");
+System.out.println("Choose the Operation:");
+
+
+int choice=S.nextInt();
+switch(choice)
+{
+    case 1:
+    System.out.println("Enter money to Withdraw:");
+    withdraw=S.nextInt();
+if(balance>=withdraw)
+{
+balance=balance-withdraw;
+System.out.println("Withdrawn Successfully..");
+}
+else
+{
+System.out.println("Insufficient Balance");
+}
+   System.out.println("");
+break;
+     case 2:
+      System.out.println("Enter money to Deposite..");
+      deposite=S.nextInt();
+      balance=balance+deposite;
+      System.out.println("Your money has been successfully deposited:");
+      System.out.println("");
+break;
+case 3:
+      System.out.println(" your Balance is:"+balance);
+      System.out.println("");
+break;
+case 4:
+System.exit(0);
+}
+}
+}
+
+catch(Exception E)
+{
+System.out.println("Enter the amount only :");
+}
+finally
+{
+System.out.println("THANK YOU VISIT AGAIN");
+}
+}
+}
